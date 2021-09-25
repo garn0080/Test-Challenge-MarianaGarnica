@@ -1,13 +1,12 @@
 import './App.css';
+import TopBar from './components/TopBar'; 
+import CreateNote from './components/CreateNote';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <p>
-          Hello world
-        </p>
-      </header>
+        <TopBar/>
+        <CreateNote/>
     </div>
   );
 }
