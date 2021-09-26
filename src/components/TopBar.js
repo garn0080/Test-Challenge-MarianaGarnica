@@ -10,7 +10,7 @@ function TopBar() {
         <Box sx={{ flexGrow: 1 }}>
             <AppBar position="static">
                 <Toolbar className="topBar">
-                    <h2 className="logo">Think</h2>
+                    <h1 className="logo">Quote.u </h1>
                     <SearchIcon/>
                 </Toolbar>
             </AppBar>

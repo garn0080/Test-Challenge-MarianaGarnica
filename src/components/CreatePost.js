@@ -2,11 +2,12 @@ import { TextareaAutosize } from "@mui/material";
 import SendIcon from "@mui/icons-material/Send";
 import Fab from "@mui/material/Fab";
 import React, {useState} from "react";
-import "./CreateNote.css";
+import "./CreatePost.css";
 import cuid from 'cuid';
 
 function CreateNote({allPosts, setAllPost}) {
   
+  // setting variables for latter save user's input
   const [name, setName] = useState()
   const [email, setEmail] = useState()
   const [text, setText] = useState()
@@ -41,11 +42,11 @@ function CreateNote({allPosts, setAllPost}) {
 
  
 
-  // Post Creation Form
+  // Form for creating posts
   return (
     <div>
       <form className="createNoteForm">
-        <input onChange={handleName} value={name} type="text" placeholder="name" name="name" />
+        <input onChange={handleName} value={name} type="text" placeholder="first name" name="name" />
         <input onChange={handleEmail} value={email} type="text" placeholder="email" name="email" />
         <div className="content">
           <TextareaAutosize

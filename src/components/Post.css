@@ -1,0 +1,49 @@
+
+.container {
+    display: flex;
+    flex-direction: row;
+    padding: 30px;
+}
+
+.contactInfo {
+    display: flex;
+    flex-direction: row;
+}
+
+#avatar{
+    margin-right: 10px;
+}
+
+.contactInfo {
+    align-items: center;
+    margin: 0px 5px;
+}
+
+#card {
+    max-width: 500px;
+}
+
+.contactInfo h4 {
+    margin: 5px;
+    color: rgb(34, 34, 34);
+    font-size: var(--font-size-regular);
+    font-family: var(--regular);
+}
+.contactInfo p {
+    color: rgb(136, 136, 136);
+    font-family: var(--regular);
+    padding-left: 5px;
+    margin: 0%;
+    font-size: var(--font-size-caption);
+}
+
+.container > div > p {
+    display: flex;
+    margin: 0px;
+    padding-left: 10px;
+    justify-content: left;
+    text-align: left;
+    letter-spacing: 0.25px;
+    font-family: var(--regular);
+    font-size: var(--font-size-regular);
+}
