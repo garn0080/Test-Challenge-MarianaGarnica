@@ -1,25 +1,59 @@
 import { TextareaAutosize } from "@mui/material";
 import SendIcon from "@mui/icons-material/Send";
 import Fab from "@mui/material/Fab";
-import React from "react";
+import React, {useState} from "react";
 import "./CreateNote.css";
+import cuid from 'cuid';
 
-function CreateNote() {
-  function postNote(item) {
-    console.log(item);
+function CreateNote({allPosts, setAllPost}) {
+  
+  const [name, setName] = useState()
+  const [email, setEmail] = useState()
+  const [text, setText] = useState()
+  
+  const handleName = (input) => {
+    setName(input.target.value)
   }
 
-  // Form
+  const handleEmail = (input) => {
+    setEmail(input.target.value)
+  }
+
+  const handleText = (input) => {
+    setText(input.target.value)
+  }
+
+
+  // creating post object
+  function postNote() {
+
+    // Save current post in AllPosts list
+    setAllPost([
+      ...allPosts,
+      {id: cuid(), userName: name, userEmail: email, userText: text}
+    ])
+
+    // clear form
+    setName("")
+    setEmail("")
+    setText("")
+  }
+
+ 
+
+  // Post Creation Form
   return (
     <div>
       <form className="createNoteForm">
-        <input type="text" placeholder="Name" name="Name" />
-        <input type="text" placeholder="Email" name="Email" />
+        <input onChange={handleName} value={name} type="text" placeholder="name" name="name" />
+        <input onChange={handleEmail} value={email} type="text" placeholder="email" name="email" />
         <div className="content">
           <TextareaAutosize
             className="textArea"
             name="thought"
             placeholder="Write a new note"
+            onChange={handleText}
+            value={text}
           />
           <Fab
             onClick={postNote}
